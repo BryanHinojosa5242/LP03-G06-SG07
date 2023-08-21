@@ -7,22 +7,29 @@ public class Principal {
     public static void main(String[] args) {
         int vida, rp;
         boolean fl = false;
-        vida = 0;
+        char jugarDenuevo;
         Scanner sc = new Scanner(System.in);
         do {
-            vida++;
-            System.out.println("Vida:" + vida + "\tCual es el numero secreto?");
-            rp = sc.nextInt();
-            if (rp == 1234) {
-                fl = true;
+            vida = 0;
+            do {
+                vida++;
+                System.out.println("Vida:" + vida + "\tCual es el numero secreto?");
+                rp = sc.nextInt();
+                if (rp == 1234) {
+                    fl = true;
+                }
+            } while(vida < 3 && !fl);
+            
+            if (fl == true) {
+                System.out.println("Adivinaste!!!! ");
+                break;
             }
-        } while(vida < 3 && !fl);
-        if (fl == true) {
-            System.out.println("Adivinaste!!!! ");
-        }
-        else {
-            System.out.println("ups, perdiste...");
-        }
+            else {
+                System.out.println("ups, perdiste...");
+            }
+            
+            System.out.println("Quieres jugar de nuevo? (S/N)");
+            jugarDenuevo = sc.next().charAt(0);
+        } while (jugarDenuevo == 'S' || jugarDenuevo == 's');
     }
-    
 }
