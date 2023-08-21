@@ -18,6 +18,12 @@ public class Principal {
                 if (rp == 1234) {
                     fl = true;
                 }
+                else if (rp > 1234) {
+                    System.out.println("El numero secreto es menor que el numero ingresado!");
+                }
+                else {
+                    System.out.println("El numero secreto es mayor que el numero ingresado!");
+                }
             } while(vida < 3 && !fl);
             
             if (fl == true) {
