@@ -9,6 +9,7 @@ public class Principal {
         boolean fl = false;
         char jugarDenuevo;
         Scanner sc = new Scanner(System.in);
+        Regalo regalo = new Regalo();  // se crea objeto
         do {
             vida = 0;
             do {
@@ -27,7 +28,7 @@ public class Principal {
             } while(vida < 3 && !fl);
             
             if (fl == true) {
-                System.out.println("Adivinaste!!!! ");
+                System.out.println("Su premio es: " + regalo.elegir(vida));
                 break;
             }
             else {
